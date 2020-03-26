@@ -27,7 +27,7 @@ x <- 1/40
 log(x)
 x <- NA
 x == NA
-is.na(x)
+is.na(x)m
 mass <- 47.5
 age <- 122
 mass <- mass*2.3
@@ -90,3 +90,16 @@ select(gapminder,year:lifeExp)
 select(gapminder,-(year:lifeExp))
 just_population <- select(gapminder,year,country,pop)
 just_population
+
+#matrix
+mtr=matrix(c(5:29),5,5)
+mtr
+
+mtr1=matrix(c(5:8), 4, 4)
+mtr1
+
+mtr <- matrix(c(7:10),4,4)
+mtr
+
+mtr3 <- matrix(c(1:5), 5, 5)
+mtr3

@@ -73,3 +73,5 @@ gather(table4a,key = year,value=TB_cases,-country)
 
 tidyr::table2
 spread(table2,key=type, value = count)
+
+

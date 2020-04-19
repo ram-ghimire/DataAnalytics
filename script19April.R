@@ -74,4 +74,68 @@ gather(table4a,key = year,value=TB_cases,-country)
 tidyr::table2
 spread(table2,key=type, value = count)
 
+#missing data, with na_if function
+
+missing <- data.frame(id= c("a","b","c"), value = c(10, -1, 20))
+missing
+
+missing %>%
+  mutate(value=na_if(value,-1))
+
+#Filling in implied values, fill the values from immediate past with fill () function
+
+implied_id <- data_frame(
+  id = c("a", NA, NA, "b", NA, NA),
+value=c(12, 23, 18, 34, 23, 16)
+)
+implied_id
+
+implied_id %>% 
+  fill(id)
+
+#Dealing with outliers with case_when function
+
+outliers <- data_frame(
+  id=c("a","b","c","d","e"),
+  value=c(15,-2,19,9,35)
+)
+outliers
+
+outliers %>% 
+  mutate(clean_value=case_when(
+    value<0~0,
+    value>30~30,
+    TRUE~value
+  )
+  )
+
+write_csv(aust_data,path = "processed_data/aust_gapminder.csv")
+  
+# Date Types with typeof function
+
+typeof(3.14)
+
+typeof(1L)
+
+typeof(1+1i)
+
+typeof(TRUE)
+
+typeof("banana")
+
+#Dates with lubridate functions
+
+library(lubridate)
+
+today()
+
+install.packages("lubridate")
+
+now()
+
+ymd("2020-04-19")
+
+dmy("13-feb-2020")
+
+mdy("February 2nd,2019")
 

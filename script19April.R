@@ -8,7 +8,7 @@ aust_data <- gapminder %>%
   rename(population=pop)
 
 gapminder %>% 
-  rename(gdpPerCap=gdpPercap)
+  rename(gdpPerCap=gdpPercap)# new name would be:gdpPerCap
   select(country,year,gdpPerCap) %>% 
   filter(country != "Afghanistan") %>% 
     
